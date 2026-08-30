@@ -63,12 +63,12 @@ import httpx
 try:
     # Try Docker path first
     sys.path.insert(0, "/app")
-    from src.data.product_catalog import PRODUCTS
+    from src.data.halcyon_catalog import HALCYON_PRODUCTS as PRODUCTS
 except ImportError:
     # Fall back to local development path
     project_root = Path(__file__).parent.parent.parent.parent
     sys.path.insert(0, str(project_root))
-    from src.data.product_catalog import PRODUCTS
+    from src.data.halcyon_catalog import HALCYON_PRODUCTS as PRODUCTS
 
 # Configuration from environment
 NVIDIA_API_KEY = os.environ.get("NVIDIA_API_KEY", "")
